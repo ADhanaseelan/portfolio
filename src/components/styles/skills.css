@@ -1,0 +1,181 @@
+/* Unique glassy background and floating header */
+.unique-bg {
+  background: linear-gradient(120deg, #e0e7ff 0%, #fdf6f0 100%);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.unique-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.float-anim {
+  display: inline-block;
+  animation: floatY 2.8s ease-in-out infinite;
+  margin-bottom: 0.5rem;
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-18px);}
+}
+
+.unique-header h2 {
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #1e293b;
+  margin: 0.2em 0 0.3em 0;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 12px #fbcfe8;
+}
+
+.unique-header p {
+  color: #64748b;
+  font-size: 1.15rem;
+  max-width: 520px;
+  margin: 0 auto;
+  letter-spacing: 0.01em;
+}
+
+/* Unique grid with animated entrance */
+.unique-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 700px) {
+  .unique-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1100px) {
+  .unique-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Glassmorphism card style */
+.glassy {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px) saturate(1.2);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
+  box-shadow: 0 8px 32px 0 rgba(80, 80, 180, 0.10), 0 2px 4px 0 rgba(0,0,0,0.04);
+}
+
+.unique-card {
+  border-radius: 1.5em;
+  padding: 2.2rem 1.5rem 1.7rem 1.5rem;
+  border: 2.5px solid transparent;
+  position: relative;
+  z-index: 1;
+  animation: card-fade-in 1s cubic-bezier(.4,0,.2,1) both;
+  transition: 
+    transform 0.36s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.36s,
+    border 0.36s,
+    background 0.36s;
+  will-change: transform, box-shadow;
+  overflow: hidden;
+}
+.unique-card:hover {
+  transform: translateY(-14px) scale(1.045) rotateZ(1deg);
+  box-shadow: 0 16px 48px 0 rgba(80, 80, 180, 0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
+  border-color: #fbcfe8;
+  background: rgba(255,255,255,0.92);
+}
+@keyframes card-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.93) rotateZ(-2deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.04) rotateZ(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateZ(0deg);
+  }
+}
+
+.skill-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-weight: 700;
+  font-size: 1.22rem;
+  margin-bottom: 0.7em;
+  color: #22223b;
+  letter-spacing: 0.01em;
+}
+
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7em;
+  width: 2.7em;
+  height: 2.7em;
+  box-shadow: 0 2px 8px 0 rgba(80, 80, 180, 0.07);
+  animation: icon-pop 0.7s cubic-bezier(.4,0,.2,1);
+  transition: box-shadow 0.3s;
+}
+.unique-card:hover .skill-icon {
+  box-shadow: 0 4px 16px 0 #fbcfe8, 0 2px 8px 0 rgba(0,0,0,0.07);
+}
+
+@keyframes icon-pop {
+  0% { transform: scale(0.7);}
+  80% { transform: scale(1.15);}
+  100% { transform: scale(1);}
+}
+
+.skill-card ul {
+  padding-left: 1.1em;
+  margin: 0;
+  color: #4b5563;
+  font-size: 1.04rem;
+  list-style: disc inside;
+}
+
+.skill-card ul li {
+  margin-bottom: 0.4em;
+  line-height: 1.7;
+  opacity: 0;
+  animation: list-fade-in 0.7s forwards;
+}
+.skill-card ul li:nth-child(1) { animation-delay: 0.2s;}
+.skill-card ul li:nth-child(2) { animation-delay: 0.35s;}
+.skill-card ul li:nth-child(3) { animation-delay: 0.5s;}
+
+@keyframes list-fade-in {
+  from { opacity: 0; transform: translateX(-18px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+
+/* Unique card color borders */
+.card-blue { border-color: #60a5fa; }
+.card-green { border-color: #4ade80; }
+.card-purple { border-color: #c084fc; }
+.card-orange { border-color: #fdba74; }
+.card-pink { border-color: #f472b6; }
+.card-indigo { border-color: #818cf8; }
+
+/* Responsive tweaks for extra small screens */
+@media (max-width: 500px) {
+  .unique-header h2 {
+    font-size: 1.3rem;
+  }
+  .unique-card {
+    padding: 1.1rem 0.7rem 1rem 0.7rem;
+  }
+  .unique-grid {
+    gap: 1.1rem;
+  }
+}

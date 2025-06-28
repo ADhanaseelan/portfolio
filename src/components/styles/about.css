@@ -1,0 +1,177 @@
+.about-section {
+  padding: 3rem 1rem 2rem 1rem;
+  background: linear-gradient(to bottom, #fff, #f5faff 80%);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.about-cta {
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 24px 0 #f3e8ff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: about-cta-pop 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.about-cta:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 32px 0 #f3e8ff;
+}
+.about-cta-arrow {
+  font-size: 1.3em;
+  margin-left: 0.5em;
+  animation: about-arrow-bounce 1.2s infinite;
+}
+@keyframes about-arrow-bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(6px);}
+}
+@keyframes about-cta-pop {
+  0% { transform: scale(0.7); opacity: 0;}
+  100% { transform: scale(1); opacity: 1;}
+}
+
+.about-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  color: #232946;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  animation: about-title-fade 0.8s 0.2s both;
+}
+@keyframes about-title-fade {
+  0% { opacity: 0; transform: translateY(-30px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.about-subtitle {
+  color: #4b5563;
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: about-title-fade 0.8s 0.3s both;
+}
+
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+@media (max-width: 900px) {
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.about-card {
+  background: #f8fafc;
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 32px 0 rgba(80, 112, 255, 0.07);
+  padding: 2.2rem 2rem 1.5rem 2rem;
+  text-align: left;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+  animation: about-card-pop 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.about-card:hover {
+  transform: translateY(-6px) scale(1.025);
+  box-shadow: 0 12px 48px 0 rgba(80, 112, 255, 0.13);
+}
+@keyframes about-card-pop {
+  0% { opacity: 0; transform: translateY(30px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: about-card-pop 0.7s forwards;
+}
+.animate-fade-in[style] {
+  animation-delay: inherit;
+}
+
+.about-card-blue {
+  background: linear-gradient(120deg, #e0f2fe 80%, #f8fafc 100%);
+}
+.about-card-green {
+  background: linear-gradient(120deg, #d1fae5 80%, #f8fafc 100%);
+}
+.about-card-yellow {
+  background: linear-gradient(120deg, #fef9c3 80%, #f8fafc 100%);
+}
+.about-card-pink {
+  background: linear-gradient(120deg, #fde2f3 80%, #f8fafc 100%);
+}
+
+.about-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #232946;
+}
+.about-card-emoji {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 2px 8px #fff3);
+  animation: about-emoji-pop 0.7s;
+}
+@keyframes about-emoji-pop {
+  0% { transform: scale(0.7) rotate(-10deg);}
+  100% { transform: scale(1) rotate(0);}
+}
+
+.about-card ul {
+  margin: 0.5rem 0 0 1.2rem;
+  padding: 0;
+  color: #374151;
+  font-size: 1.08rem;
+}
+.about-card ul li {
+  margin-bottom: 0.5rem;
+  list-style: disc;
+  animation: about-li-fade 0.6s;
+}
+@keyframes about-li-fade {
+  0% { opacity: 0; transform: translateX(-10px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+.about-card-note {
+  margin-top: 1rem;
+  color: #7c3aed;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 1.5rem 0.2rem;
+  }
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .about-card {
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+  }
+}
